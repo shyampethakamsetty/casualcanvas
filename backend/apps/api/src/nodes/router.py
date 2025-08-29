@@ -281,7 +281,7 @@ async def execute_ai_node(run_id: str, node_id: str, node_type: str, config: Dic
         else:
             # Mock summary when OpenAI is not available
             mock_summary = f"Mock {summary_type} summary (OpenAI not configured): " + " ".join(content.split()[:max_length//2])
-            return {
+        return {
                 "summary": mock_summary,
                 "original_length": len(content.split()),
                 "summary_length": len(mock_summary.split()),
@@ -290,7 +290,7 @@ async def execute_ai_node(run_id: str, node_id: str, node_type: str, config: Dic
                 "type": "text",
                 "ai_powered": False,
                 "note": "OpenAI API key not configured - using mock summary"
-            }
+        }
     elif node_type == "ai.classify":
         categories = config.get("categories", "business\ntechnology\nother").split("\n")
         return {

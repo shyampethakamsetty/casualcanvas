@@ -1,31 +1,36 @@
-# AI Workflow Builder
+# CasualCanvas - AI Workflow Builder
 
-A professional no-code AI workflow automation platform that allows users to create, edit, and execute complex workflows through an intuitive visual interface.
+**CasualCanvas** is a professional no-code AI workflow automation platform that allows users to create, edit, and execute complex workflows through an intuitive visual interface.
 
-**🚀 Try it now: [https://casualcanvas.duckdns.org](https://casualcanvas.duckdns.org)**
+**🚀 Live: [https://casualcanvas.duckdns.org](https://casualcanvas.duckdns.org)**
 
-Experience the AI Workflow Builder in action with full SSL security and production-ready performance.
+Experience **CasualCanvas** in action with full SSL security and production-ready performance.
 
-## 🎬 Platform Demo
+## 🎬 CasualCanvas Demo
 
-![AI Workflow Builder Demo](aiwf-docs/AI_Workflow_Builder_Demo_Video-ezgif.com-optimize.gif)
+![CasualCanvas AI Workflow Builder Demo](aiwf-docs/AI_Workflow_Builder_Demo_Video-ezgif.com-optimize.gif)
 
-*See how easy it is to build AI workflows with drag-and-drop simplicity*
+*See how easy it is to build AI workflows with **CasualCanvas** drag-and-drop simplicity*
 
-## Features
+## ✨ CasualCanvas Features
 
-- **Visual Workflow Editor**: Drag-and-drop interface for building workflows
-- **Node-based Architecture**: PDF processing, AI summarization, text transformation, and more
-- **Real-time Execution**: Run workflows with live progress tracking and logs
-- **Professional UI**: Modern, responsive design with collapsible panels and draggable components
-- **AI Integration**: OpenAI-powered summarization with configurable types and lengths
-- **File Management**: PDF upload and processing capabilities
+**CasualCanvas** empowers users with cutting-edge AI workflow automation:
+
+- **🎨 Visual Workflow Editor**: Intuitive drag-and-drop interface for building complex workflows
+- **🔧 Node-based Architecture**: PDF processing, AI summarization, text transformation, and more
+- **⚡ Real-time Execution**: Run workflows with live progress tracking and detailed logs
+- **💎 Professional UI**: Modern, responsive design with collapsible panels and draggable components
+- **🤖 AI Integration**: OpenAI-powered summarization with configurable types and lengths
+- **📁 File Management**: Seamless PDF upload and processing capabilities
+- **🔒 Enterprise Security**: SSL-secured with production-grade authentication
+- **📊 Monitoring**: Built-in analytics and performance tracking
 
 ## Quick Start
 
-### 🌟 **Production Access**
+### 🌟 **CasualCanvas Production Access**
 - **Live Application**: [https://casualcanvas.duckdns.org](https://casualcanvas.duckdns.org)
 - **API Endpoint**: `https://casualcanvas.duckdns.org/api/`
+- **Brand**: **CasualCanvas** - Professional AI workflow automation
 
 ### 🛠️ **Local Development**
 
@@ -69,9 +74,9 @@ REDIS_URL=redis://redis:6379
 - **Worker**: `backend/apps/worker/` - Background task processing
 - **Frontend**: `frontend/apps/web/` - Next.js application
 
-## 🚀 Production Deployment
+## 🚀 CasualCanvas Production Deployment
 
-The application is deployed at **[casualcanvas.duckdns.org](https://casualcanvas.duckdns.org)** with:
+**CasualCanvas** is deployed at **[casualcanvas.duckdns.org](https://casualcanvas.duckdns.org)** with:
 
 - ✅ **SSL/HTTPS**: Secured with Let's Encrypt certificates
 - ✅ **Nginx Reverse Proxy**: Production-grade web server
@@ -99,6 +104,16 @@ docker-compose logs -f api         # View API logs
 - **Text Transform**: Process and transform text content
 - **Output**: Display and export results
 
+---
+
+## 🌟 About CasualCanvas
+
+**CasualCanvas** is the future of no-code AI automation. Built for professionals who need sophisticated workflow capabilities without the complexity of traditional programming.
+
+**Live Demo**: [https://casualcanvas.duckdns.org](https://casualcanvas.duckdns.org)
+
+---
+
 ## License
 
-Private project - All rights reserved. 
+CasualCanvas - Private project - All rights reserved. 
