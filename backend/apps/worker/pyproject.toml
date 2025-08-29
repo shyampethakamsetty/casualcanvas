@@ -1,0 +1,11 @@
+dependencies = [
+  "dramatiq",
+  "redis", 
+  "pymongo",
+  "qdrant-client",
+  "requests",
+  "PyPDF2",
+  "beautifulsoup4",
+  "python-multipart",
+  "openai",
+]

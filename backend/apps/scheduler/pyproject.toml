@@ -1,0 +1,9 @@
+[project]
+name = "aiwf-scheduler"
+version = "0.1.0"
+dependencies = [
+  "croniter",
+  "pytz",
+  "requests",
+  "pyjwt",
+]

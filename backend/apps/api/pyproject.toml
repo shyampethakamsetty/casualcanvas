@@ -1,0 +1,27 @@
+[project]
+name = "aiwf-api"
+version = "0.1.0"
+dependencies = [
+  "fastapi",
+  "uvicorn[standard]",
+  "pydantic[email]",
+  "pymongo",
+  "motor",
+  "python-jose[cryptography]",
+  "PyJWT",
+  "passlib[bcrypt]",
+  "python-multipart",
+  "prometheus-fastapi-instrumentator",
+  "qdrant-client",
+  "requests",
+  "redis",
+  "dramatiq",
+  "openai",
+  "beautifulsoup4",
+  "PyPDF2",
+  "twilio",
+  "notion-client",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
