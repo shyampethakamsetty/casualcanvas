@@ -88,7 +88,7 @@ export function NodePalette({ onCollapseChange }: NodePaletteProps) {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                 </svg>
               </div>
-              <div>
+            <div>
                 <h3 className="text-sm font-semibold text-secondary-800">Node Palette</h3>
                 <p className="text-xs text-subtle">Drag to canvas</p>
               </div>
@@ -120,13 +120,13 @@ export function NodePalette({ onCollapseChange }: NodePaletteProps) {
         <div className="flex-1 overflow-auto p-4 space-y-4">
           {Object.entries(nodeGroups).map(([groupName, nodes]) => (
             <div key={groupName} className="space-y-3">
-              <button
-                onClick={() => toggleGroup(groupName)}
+          <button
+            onClick={() => toggleGroup(groupName)}
                 className="flex items-center justify-between w-full text-left group"
-              >
+          >
                 <span className="text-sm font-medium text-secondary-700 group-hover:text-secondary-900 transition-colors">
                   {groupName}
-                </span>
+            </span>
                 <svg 
                   className={`w-4 h-4 text-secondary-500 transition-transform duration-200 ${
                     expandedGroups.has(groupName) ? 'rotate-180' : ''
@@ -137,14 +137,14 @@ export function NodePalette({ onCollapseChange }: NodePaletteProps) {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
-              </button>
-              
-              {expandedGroups.has(groupName) && (
+          </button>
+          
+          {expandedGroups.has(groupName) && (
                 <div className="space-y-2 animate-fade-in">
                   {nodes.map((node) => (
-                    <div
-                      key={node.id}
-                      draggable
+                <div
+                  key={node.id}
+                  draggable
                       onDragStart={(e) => handleDragStart(e, node.id)}
                       className="p-3 bg-white border border-secondary-200 rounded-lg cursor-grab active:cursor-grabbing hover:shadow-medium hover:border-primary-300 transition-all duration-200 group"
                     >
@@ -154,18 +154,18 @@ export function NodePalette({ onCollapseChange }: NodePaletteProps) {
                         </div>
                         <div className="flex-1 min-w-0">
                           <h4 className="text-sm font-medium text-secondary-800 group-hover:text-secondary-900 truncate">
-                            {node.label}
+                        {node.label}
                           </h4>
                           <p className="text-xs text-subtle truncate">
                             {node.description}
                           </p>
-                        </div>
+                      </div>
                       </div>
                     </div>
                   ))}
                 </div>
-              )}
-            </div>
+          )}
+        </div>
           ))}
         </div>
       )}

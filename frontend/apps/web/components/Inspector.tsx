@@ -131,9 +131,9 @@ export function Inspector({ selectedNode, onUpdate, onDelete, workflowNodes = []
       
       // Get inputs from previous nodes
       getPreviousNodeOutputs(selectedNode.id).then(previousNodeInputs => {
-        if (Object.keys(previousNodeInputs).length > 0) {
+      if (Object.keys(previousNodeInputs).length > 0) {
           setTestInputs(prev => ({ ...prev, ...previousNodeInputs }));
-        }
+      }
       }).catch(error => {
         console.warn('Failed to get previous node outputs:', error);
       });
@@ -182,14 +182,14 @@ export function Inspector({ selectedNode, onUpdate, onDelete, workflowNodes = []
         } catch (error) {
           console.warn(`Failed to get outputs from source node ${sourceNode.id}:`, error);
           // Fallback to mock data if real test fails
-          if (sourceNode.data?.type?.startsWith("ingest.")) {
-            previousOutputs.content = "Sample content from previous ingest node";
-            previousOutputs.document_id = "doc_12345";
-          } else if (sourceNode.data?.type?.startsWith("ai.")) {
-            previousOutputs.content = "Processed content from previous AI node";
-            previousOutputs.summary = "Previous summary";
-          }
+        if (sourceNode.data?.type?.startsWith("ingest.")) {
+          previousOutputs.content = "Sample content from previous ingest node";
+          previousOutputs.document_id = "doc_12345";
+        } else if (sourceNode.data?.type?.startsWith("ai.")) {
+          previousOutputs.content = "Processed content from previous AI node";
+          previousOutputs.summary = "Previous summary";
         }
+      }
       }
     }
     
@@ -444,8 +444,8 @@ export function Inspector({ selectedNode, onUpdate, onDelete, workflowNodes = []
           </div>
           <div>
             <h3 className="heading-sm">
-              {selectedNode.data?.label || nodeType}
-            </h3>
+          {selectedNode.data?.label || nodeType}
+        </h3>
             <p className="text-xs text-subtle">{nodeType}</p>
           </div>
         </div>
@@ -465,53 +465,53 @@ export function Inspector({ selectedNode, onUpdate, onDelete, workflowNodes = []
 
       {/* Content */}
       <div className="flex-1 overflow-auto p-6 space-y-6">
-        {/* Tabs */}
+      {/* Tabs */}
         <div className="flex space-x-1 bg-secondary-100 p-1 rounded-lg">
-          <button
+        <button
             onClick={() => setActiveTab("config")}
             className={`flex-1 px-4 py-2.5 text-sm font-medium rounded-md transition-all duration-200 ${
-              activeTab === "config"
+            activeTab === "config"
                 ? "bg-white text-primary-700 shadow-soft"
                 : "text-secondary-600 hover:text-secondary-800 hover:bg-secondary-50"
-            }`}
-          >
+          }`}
+        >
             <svg className="w-4 h-4 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" />
             </svg>
-            Configuration
-          </button>
-          <button
+          Configuration
+        </button>
+        <button
             onClick={() => setActiveTab("test")}
             className={`flex-1 px-4 py-2.5 text-sm font-medium rounded-md transition-all duration-200 ${
-              activeTab === "test"
+            activeTab === "test"
                 ? "bg-white text-primary-700 shadow-soft"
                 : "text-secondary-600 hover:text-secondary-800 hover:bg-secondary-50"
-            }`}
-          >
+          }`}
+        >
             <svg className="w-4 h-4 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
             </svg>
-            Test Node
-          </button>
-        </div>
+          Test Node
+        </button>
+      </div>
 
         {/* Tab Content */}
-        {activeTab === "config" && (
+      {activeTab === "config" && (
           <div className="space-y-6 animate-fade-in">
-            {schema.fields.map((field) => (
+          {schema.fields.map((field) => (
               <div key={field.name} className="input-group">
                 <label className="label">
-                  {field.label}
+                {field.label}
                   {field.required && <span className="text-accent-500 ml-1">*</span>}
-                </label>
-                {renderField(field)}
+              </label>
+              {renderField(field)}
                 {field.description && (
                   <p className="text-xs text-subtle mt-1">{field.description}</p>
                 )}
-              </div>
-            ))}
-          </div>
-        )}
+            </div>
+          ))}
+        </div>
+      )}
 
       {/* Test Tab */}
       {activeTab === "test" && (

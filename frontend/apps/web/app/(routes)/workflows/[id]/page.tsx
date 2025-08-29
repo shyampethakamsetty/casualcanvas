@@ -312,9 +312,9 @@ export default function WorkflowEditorPage(){
                   <input 
                     className="bg-transparent text-lg font-semibold text-secondary-900 placeholder-secondary-400 border-none outline-none min-w-[200px]" 
                     value={name}
-                    onChange={(e)=>{
-                      setName(e.target.value);
-                      setHasUnsavedChanges(true);
+                onChange={(e)=>{
+                  setName(e.target.value);
+                  setHasUnsavedChanges(true);
                     }} 
                     placeholder="Untitled Workflow"
                   />
@@ -345,11 +345,11 @@ export default function WorkflowEditorPage(){
                 
                 {/* Action Buttons */}
                 <div className="flex items-center gap-2">
-                  <button 
-                    className={`btn-primary ${isSaving ? 'opacity-75' : ''}`} 
-                    onClick={() => handleSave()}
-                    disabled={isSaving}
-                  >
+              <button 
+                className={`btn-primary ${isSaving ? 'opacity-75' : ''}`} 
+                onClick={() => handleSave()}
+                disabled={isSaving}
+              >
                     {isSaving ? (
                       <>
                         <svg className="animate-spin -ml-1 mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24">
@@ -366,7 +366,7 @@ export default function WorkflowEditorPage(){
                         Save
                       </>
                     )}
-                  </button>
+              </button>
                 </div>
               </div>
             </div>
@@ -377,14 +377,14 @@ export default function WorkflowEditorPage(){
             className="flex-1 bg-gradient-to-br from-white to-secondary-50/30 relative"
             data-canvas-container
           >
-            <Canvas 
-              nodes={nodes} 
-              edges={edges} 
-              setNodes={setNodes} 
-              setEdges={setEdges}
-              onNodeSelect={setSelected}
-            />
-          </div>
+              <Canvas 
+                nodes={nodes} 
+                edges={edges} 
+                setNodes={setNodes} 
+                setEdges={setEdges}
+                onNodeSelect={setSelected}
+              />
+            </div>
           
           {/* Draggable Splitter */}
           <div
@@ -433,7 +433,7 @@ export default function WorkflowEditorPage(){
         </div>
 
         {/* Right Sidebar - Inspector */}
-        {selected && (
+          {selected && (
           <div className="w-96 border-l border-secondary-200/50 bg-white/80 backdrop-blur-sm">
             <Inspector 
               selectedNode={selected} 
@@ -443,7 +443,7 @@ export default function WorkflowEditorPage(){
               workflowEdges={edges}
             />
           </div>
-        )}
+          )}
       </div>
     </ReactFlowProvider>
   );

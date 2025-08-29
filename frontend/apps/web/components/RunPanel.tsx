@@ -167,7 +167,7 @@ export function RunPanel({ workflowId, height = 320 }: { workflowId: string; hei
         isCollapsed ? 'max-h-0' : 'max-h-full'
       }`}>
         <div className="overflow-auto p-6" style={{ height: `${height - 64}px` }}>
-          {isLoading ? (
+      {isLoading ? (
             <div className="flex items-center justify-center h-full">
               <div className="text-center">
                 <div className="animate-spin mx-auto h-8 w-8 text-primary-600 mb-3">
@@ -178,8 +178,8 @@ export function RunPanel({ workflowId, height = 320 }: { workflowId: string; hei
                 </div>
                 <p className="text-muted">Loading runs...</p>
               </div>
-            </div>
-          ) : runs.length === 0 ? (
+        </div>
+      ) : runs.length === 0 ? (
             <div className="flex items-center justify-center h-full">
               <div className="text-center">
                 <div className="w-16 h-16 mx-auto bg-secondary-100 rounded-full flex items-center justify-center mb-4">
@@ -190,61 +190,61 @@ export function RunPanel({ workflowId, height = 320 }: { workflowId: string; hei
                 <p className="text-muted">No runs yet</p>
                 <p className="text-subtle text-sm mt-1">Click "Run Workflow" to execute your first workflow</p>
               </div>
-            </div>
-          ) : (
+        </div>
+      ) : (
             <div className="space-y-4 h-full">
               {/* Runs List */}
               <div className="space-y-3 max-h-40 overflow-y-auto">
-                {runs.map((run) => (
-                  <div
-                    key={run.id}
+          {runs.map((run) => (
+            <div
+              key={run.id}
                     className={`card-compact cursor-pointer transition-all duration-200 ${
                       selectedRun?.id === run.id 
                         ? "border-primary-300 bg-primary-50/50 shadow-medium" 
                         : "hover:border-secondary-300 hover:shadow-medium"
-                    }`}
-                    onClick={() => setSelectedRun(run)}
-                  >
-                    <div className="flex items-center justify-between">
+              }`}
+              onClick={() => setSelectedRun(run)}
+            >
+              <div className="flex items-center justify-between">
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-2">
                           <span className={getStatusColor(run.status)}>
-                            {run.status}
-                          </span>
+                      {run.status}
+                    </span>
                           <span className="text-sm text-muted">
                             {new Date(run.created_at).toLocaleDateString()} at {new Date(run.created_at).toLocaleTimeString()}
-                          </span>
-                        </div>
-                        {run.error && (
+                    </span>
+                  </div>
+                  {run.error && (
                           <div className="flex items-start gap-2 mt-2 p-2 bg-accent-50 border border-accent-200 rounded-lg">
                             <svg className="w-4 h-4 text-accent-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                             <p className="text-sm text-accent-700">{run.error}</p>
                           </div>
-                        )}
-                      </div>
-                      {run.status === "running" && (
-                        <button
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            cancelRun(run.id);
-                          }}
+                  )}
+                </div>
+                {run.status === "running" && (
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      cancelRun(run.id);
+                    }}
                           className="btn-danger ml-4 text-xs px-2 py-1"
-                        >
+                  >
                           <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                           </svg>
-                          Cancel
-                        </button>
-                      )}
-                    </div>
-                  </div>
-                ))}
+                    Cancel
+                  </button>
+                )}
               </div>
+            </div>
+          ))}
+        </div>
 
               {/* Logs Section */}
-              {selectedRun && (
+      {selectedRun && (
                 <div className="flex-1 flex flex-col min-h-0">
                   <div className="flex items-center gap-2 mb-3">
                     <svg className="w-5 h-5 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -253,7 +253,7 @@ export function RunPanel({ workflowId, height = 320 }: { workflowId: string; hei
                     <h4 className="heading-sm">Run Logs</h4>
                   </div>
                   <div className="flex-1 bg-secondary-50 border border-secondary-200 rounded-lg p-4 overflow-y-auto font-mono text-sm">
-                    {logs.length === 0 ? (
+            {logs.length === 0 ? (
                       <div className="flex items-center justify-center h-full">
                         <div className="text-center">
                           <svg className="w-8 h-8 mx-auto text-secondary-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -262,24 +262,24 @@ export function RunPanel({ workflowId, height = 320 }: { workflowId: string; hei
                           <p className="text-subtle">No logs available</p>
                         </div>
                       </div>
-                    ) : (
+            ) : (
                       <div className="space-y-2">
                         {logs.map((log) => (
                           <div key={log.id} className="flex items-start gap-3 p-2 rounded bg-white/50">
                             <span className="text-xs text-subtle font-normal whitespace-nowrap mt-0.5">
-                              {new Date(log.timestamp).toLocaleTimeString()}
-                            </span>
+                    {new Date(log.timestamp).toLocaleTimeString()}
+                  </span>
                             <span className={`text-xs font-medium px-2 py-0.5 rounded-full whitespace-nowrap ${getLogLevelColor(log.level)}`}>
                               {log.level.toUpperCase()}
-                            </span>
+                  </span>
                             <span className="text-sm text-secondary-800 flex-1">{log.message}</span>
                           </div>
                         ))}
-                      </div>
-                    )}
-                  </div>
                 </div>
-              )}
+            )}
+          </div>
+        </div>
+      )}
             </div>
           )}
         </div>

@@ -11,11 +11,11 @@ module.exports = {
       max_memory_restart: '1G',
       env: {
         NODE_ENV: 'production',
-        PORT: 3001
+        PORT: 3003
       },
       env_development: {
         NODE_ENV: 'development',
-        PORT: 3001
+        PORT: 3003
       },
       log_file: '/home/tutorbuddy/htdocs/tutorbuddy.co/cc/logs/frontend-combined.log',
       out_file: '/home/tutorbuddy/htdocs/tutorbuddy.co/cc/logs/frontend-out.log',

@@ -74,11 +74,11 @@ export default function HomePage() {
             </div>
             
             <h1 className="text-6xl lg:text-7xl font-bold bg-gradient-to-r from-secondary-800 via-primary-700 to-secondary-700 bg-clip-text text-transparent mb-6 tracking-tight drop-shadow-lg">
-              AI Workflow Builder
+              CasualCanvas
         </h1>
             
             <p className="text-2xl text-secondary-700 mb-4 font-medium drop-shadow-sm">
-              End-to-End No-Code AI Automation Platform
+              AI Workflow Builder - End-to-End No-Code AI Automation Platform
             </p>
             
             <p className="text-xl text-secondary-600 mb-12 max-w-4xl mx-auto leading-relaxed drop-shadow-sm">
@@ -217,7 +217,7 @@ export default function HomePage() {
               </h2>
             </div>
             <p className="text-xl text-secondary-600 max-w-3xl mx-auto bg-white/50 backdrop-blur-sm p-6 rounded-2xl border border-white/30 shadow-md">
-              Professional no-code platform for building sophisticated AI workflows at enterprise scale
+              CasualCanvas: Professional no-code platform for building sophisticated AI workflows at enterprise scale
             </p>
       </div>
 
@@ -492,10 +492,10 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto px-6 text-center">
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-10 border border-secondary-200/50 shadow-lg">
             <h2 className="text-4xl font-bold text-secondary-900 mb-4">
-              Ready to Build AI Workflows?
+              Ready to Build AI Workflows with CasualCanvas?
             </h2>
             <p className="text-lg text-secondary-600 mb-8 max-w-2xl mx-auto">
-              Join the future of no-code AI automation. Start building sophisticated workflows today.
+              Join the future of no-code AI automation with CasualCanvas. Start building sophisticated workflows today.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-xl mx-auto">

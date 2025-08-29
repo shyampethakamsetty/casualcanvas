@@ -109,86 +109,86 @@ export default function LoginPage() {
                 </div>
                 
                 <h1 className="text-2xl font-bold bg-gradient-to-r from-secondary-800 via-primary-700 to-secondary-700 bg-clip-text text-transparent mb-3">
-                  AI Workflow Builder
+                  CasualCanvas
                 </h1>
                 <p className="text-secondary-600 font-medium">
                   {mode === "login" ? "Welcome back! Sign in to your account" : "Create your account to get started"}
                 </p>
               </div>
-              
+      
               <div className="space-y-6">
                 <div className="space-y-5">
                   <div className="input-group">
                     <label className="label font-semibold text-secondary-700">
-                      Email Address
-                    </label>
+            Email Address
+          </label>
                     <div className="relative">
-                      <input 
+          <input 
                         className="input pl-12 bg-white/70 border-secondary-200/60 focus:border-primary-400 focus:ring-primary-400/20 focus:bg-white transition-all duration-200 shadow-sm" 
-                        type="email"
-                        placeholder="you@example.com" 
-                        value={email} 
-                        onChange={e => setEmail(e.target.value)}
-                        disabled={isLoading}
-                      />
+            type="email"
+            placeholder="you@example.com" 
+            value={email} 
+            onChange={e => setEmail(e.target.value)}
+            disabled={isLoading}
+          />
                       <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                         <svg className="w-5 h-5 text-secondary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
                         </svg>
                       </div>
                     </div>
-                  </div>
-                  
+        </div>
+        
                   <div className="input-group">
                     <label className="label font-semibold text-secondary-700">
-                      Password
-                    </label>
+            Password
+          </label>
                     <div className="relative">
-                      <input 
+          <input 
                         className="input pl-12 bg-white/70 border-secondary-200/60 focus:border-primary-400 focus:ring-primary-400/20 focus:bg-white transition-all duration-200 shadow-sm" 
-                        type="password"
-                        placeholder="Enter your password" 
-                        value={password} 
-                        onChange={e => setPassword(e.target.value)}
-                        disabled={isLoading}
-                      />
+            type="password"
+            placeholder="Enter your password" 
+            value={password} 
+            onChange={e => setPassword(e.target.value)}
+            disabled={isLoading}
+          />
                       <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                         <svg className="w-5 h-5 text-secondary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                         </svg>
                       </div>
                     </div>
-                  </div>
-                  
-                  {mode === "register" && (
+        </div>
+        
+        {mode === "register" && (
                     <div className="input-group">
                       <label className="label font-semibold text-secondary-700">
                         Name <span className="text-secondary-500 font-normal">(Optional)</span>
-                      </label>
+            </label>
                       <div className="relative">
-                        <input 
+            <input 
                           className="input pl-12 bg-white/70 border-secondary-200/60 focus:border-primary-400 focus:ring-primary-400/20 focus:bg-white transition-all duration-200 shadow-sm" 
-                          type="text"
-                          placeholder="Your full name" 
-                          value={name} 
-                          onChange={e => setName(e.target.value)}
-                          disabled={isLoading}
-                        />
+              type="text"
+              placeholder="Your full name" 
+              value={name} 
+              onChange={e => setName(e.target.value)}
+              disabled={isLoading}
+            />
                         <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                           <svg className="w-5 h-5 text-secondary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                           </svg>
                         </div>
                       </div>
-                    </div>
-                  )}
+          </div>
+        )}
                 </div>
-                
-                <button 
+        
+        <button 
                   className="btn-primary w-full relative overflow-hidden group shadow-lg shadow-primary-500/25 hover:shadow-xl hover:shadow-primary-500/30 transition-all duration-300"
-                  onClick={mode === "login" ? handleLogin : handleRegister}
-                  disabled={isLoading}
-                >
+          onClick={mode === "login" ? handleLogin : handleRegister}
+          disabled={isLoading}
+        >
                   <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-primary-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="relative flex items-center justify-center">
                     {isLoading ? (
@@ -208,27 +208,27 @@ export default function LoginPage() {
                       </>
                     )}
                   </div>
-                </button>
-                
-                <div className="text-center">
-                  <button 
+        </button>
+        
+        <div className="text-center">
+          <button 
                     className="text-sm text-secondary-600 hover:text-primary-600 transition-colors duration-200 underline decoration-secondary-300 hover:decoration-primary-400 underline-offset-4"
-                    onClick={() => {
-                      setMode(mode === "login" ? "register" : "login");
-                      setMsg("");
-                      setPassword("");
-                      setName("");
-                    }}
-                    disabled={isLoading}
-                  >
-                    {mode === "login" 
-                      ? "Don't have an account? Create one" 
+            onClick={() => {
+              setMode(mode === "login" ? "register" : "login");
+              setMsg("");
+              setPassword("");
+              setName("");
+            }}
+            disabled={isLoading}
+          >
+            {mode === "login" 
+              ? "Don't have an account? Create one" 
                       : "Already have an account? Sign in"
-                    }
-                  </button>
-                </div>
-                
-                {msg && (
+            }
+          </button>
+        </div>
+        
+        {msg && (
                   <div className={`p-4 rounded-xl border-2 text-sm shadow-lg ${
                     msg.includes("successful") 
                       ? "bg-gradient-to-r from-success-50 to-success-100 text-success-800 border-success-200/60 shadow-success-500/10" 
@@ -247,7 +247,7 @@ export default function LoginPage() {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
                         </div>
-                      )}
+        )}
                       <span className="font-medium">{msg}</span>
                     </div>
                   </div>
@@ -260,7 +260,7 @@ export default function LoginPage() {
         {/* Footer */}
         <div className="text-center mt-8">
           <p className="text-sm text-secondary-500/80 font-medium">
-            Professional no-code AI workflow automation platform
+                          CasualCanvas - Professional no-code AI workflow automation platform
           </p>
         </div>
       </div>

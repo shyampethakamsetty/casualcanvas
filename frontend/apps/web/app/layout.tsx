@@ -4,8 +4,8 @@ import { AuthProvider } from "../lib/auth";
 import { LayoutWrapper } from "../components/LayoutWrapper";
 
 export const metadata = { 
-  title: "AI Workflow Builder", 
-  description: "Professional no-code AI workflow automation platform" 
+  title: "CasualCanvas - AI Workflow Builder", 
+  description: "CasualCanvas: Professional no-code AI workflow automation platform" 
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

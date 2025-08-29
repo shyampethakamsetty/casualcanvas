@@ -120,7 +120,7 @@ export default function WorkflowsPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
-                  <div>
+                <div>
                     <h3 className="heading-sm group-hover:text-primary-700 transition-colors">
                       {workflow.name}
                     </h3>
@@ -128,9 +128,9 @@ export default function WorkflowsPage() {
                   </div>
                 </div>
                 <span className="text-xs text-subtle">
-                  {new Date(workflow.updated_at).toLocaleDateString()}
-                </span>
-              </div>
+                      {new Date(workflow.updated_at).toLocaleDateString()}
+                    </span>
+                  </div>
               
               <div className="text-sm text-muted mb-4">
                 {workflow.description || "No description provided"}
