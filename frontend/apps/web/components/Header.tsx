@@ -92,8 +92,8 @@ export function Header() {
                   </svg>
             Login
           </Link>
-                <Link href={"/register" as any} className="btn-primary">
-                  Get Started
+                                <Link href={"/login" as any} className="btn-primary">
+                Get Started
                 </Link>
               </div>
         )}

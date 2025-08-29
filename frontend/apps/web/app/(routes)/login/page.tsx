@@ -161,27 +161,28 @@ export default function LoginPage() {
         </div>
         
         {mode === "register" && (
-                    <div className="input-group">
-                      <label className="label font-semibold text-secondary-700">
-                        Name <span className="text-secondary-500 font-normal">(Optional)</span>
+          <div className="input-group">
+            <label className="label font-semibold text-secondary-700">
+              Name <span className="text-secondary-500 font-normal">(Optional)</span>
             </label>
-                      <div className="relative">
-            <input 
-                          className="input pl-12 bg-white/70 border-secondary-200/60 focus:border-primary-400 focus:ring-primary-400/20 focus:bg-white transition-all duration-200 shadow-sm" 
-              type="text"
-              placeholder="Your full name" 
-              value={name} 
-              onChange={e => setName(e.target.value)}
-              disabled={isLoading}
-            />
-                        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                          <svg className="w-5 h-5 text-secondary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                          </svg>
-                        </div>
-                      </div>
+            <div className="relative">
+              <input 
+                className="input pl-12 bg-white/70 border-secondary-200/60 focus:border-primary-400 focus:ring-primary-400/20 focus:bg-white transition-all duration-200 shadow-sm" 
+                type="text"
+                placeholder="Your full name" 
+                value={name} 
+                onChange={e => setName(e.target.value)}
+                disabled={isLoading}
+              />
+              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                <svg className="w-5 h-5 text-secondary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+              </div>
+            </div>
           </div>
         )}
+
                 </div>
         
         <button 
@@ -212,7 +213,7 @@ export default function LoginPage() {
         
         <div className="text-center">
           <button 
-                    className="text-sm text-secondary-600 hover:text-primary-600 transition-colors duration-200 underline decoration-secondary-300 hover:decoration-primary-400 underline-offset-4"
+            className="text-sm text-secondary-600 hover:text-primary-600 transition-colors duration-200 underline decoration-secondary-300 hover:decoration-primary-400 underline-offset-4"
             onClick={() => {
               setMode(mode === "login" ? "register" : "login");
               setMsg("");
@@ -223,7 +224,7 @@ export default function LoginPage() {
           >
             {mode === "login" 
               ? "Don't have an account? Create one" 
-                      : "Already have an account? Sign in"
+              : "Already have an account? Sign in"
             }
           </button>
         </div>
